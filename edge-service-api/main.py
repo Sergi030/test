@@ -16,3 +16,4 @@ if __name__ == "__main__":
     print("Test me on: http://ptin2022.github.io/A2/")
     print("=========================================")
     app.run(host="0.0.0.0")
+
