@@ -1,0 +1,25 @@
+name: Lint
+
+on:
+  pull_request:
+    branches:
+      - 'main'
+
+jobs:
+  flake8-lint:
+    runs-on: ubuntu-latest
+    name: Lint
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+          
+      - name: flake8 Lint
+        uses: py-actions/flake8@v2
+        with:
+          exclude: ".git"
+          max-line-length: "200"
